@@ -1,0 +1,150 @@
+body {
+  animation: mymove 5s infinite alternate;
+}
+
+@keyframes mymove {
+  from { background-color: antiquewhite; }
+  to { background-color: bisque; }
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px; /* space between items */
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+#Home {
+  display: flex;
+  align-items: center;   /* vertical alignment */
+  justify-content: space-between; /* space between text & form */
+  gap: 20px;
+}
+
+#Home h2 {
+  margin: 0;
+}
+
+#Home form {
+  display: flex;
+  gap: 10px;
+}
+
+#Home input[type="search"] {
+  width: 250px;  /* increase this value */
+  padding: 20px;
+  height: 25px; 
+}
+
+ img {
+    border-radius: 50%;
+ }
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-container article {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .product-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.product-container article {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-container img {
+  display: block;
+}
+
+/* glitter effect */
+.product-container article::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+  transform: skewX(-25deg);
+}
+
+/* animate on hover */
+.product-container article:hover::before {
+  animation: shine 1s;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+.product-container article {
+  text-align: center;
+}
+
+body {
+  text-align: center;
+}
+
+.product-container img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px; /* optional */
+}
+
+.button{
+    background-color: rgb(207, 139, 49);
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.product-container figcaption {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 8px;
+  color: #5a3e1b; /* wooden theme color */
+}
+
+h1 {
+  margin-top: 50px; /* increase value as needed */
+}
+header p {
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #8B4513; /* wooden brown color */
+  margin: 10px 0;
+}
